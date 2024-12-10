@@ -20,6 +20,7 @@ Extensions :
 11. React-Native/React/Redux snippets for es6/es7
 12. Simple React Snippets
 13. Image preview
+    
 ================================================================================
 PERINTAH UNTUK MENGHAPUS PROJECT JIKA TERJADI ERROR :
 1. Run as Administrator (cmd)
