@@ -173,7 +173,7 @@ LOADING LOGIN :
 https://www.youtube.com/watch?v=wXiFNHf-pXg
 
 ================================================================================
-REACT NATIVE MODAL BOX :
+REACT NATIVE MODAL BOX (1):
 
 Link Library : https://github.com/react-native-modal/react-native-modal
   1. Terminal : npm i react-native-modal
@@ -286,17 +286,98 @@ Link Library : https://github.com/react-native-modal/react-native-modal
   8. Link Fungsi Pada Modal :
      https://github.com/react-native-modal/react-native-modal?tab=readme-ov-file#available-props
 
+================================================================================
+REACT NATIVE MODAL BOX (2):
 
+Sumber : https://www.youtube.com/watch?v=aozm5ZxiHbc
 
+Link Library : https://github.com/react-native-modal/react-native-modal
+  1. Terminal : npm i react-native-modal
+     atau,
+     Terminal : yarn add react-native-modal
 
+  2. Terminal : npx react-native start
+     Terminal : npx react-native run-android
 
+  3. Import :
+     import Modal from "react-native-modal";
 
+  4. Sourcode :
+      import React, {useState} from 'react';
+      import {Text, View, TouchableOpacity, Image} from 'react-native';
 
+      import Modal from 'react-native-modal';
 
+      const App = () => {
+        const [modal, setModal] = useState(false);
 
+        return (
+          <View style={{flex: 1, justifyContent: 'center'}}>
+            <TouchableOpacity
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#FAC67A',
+                paddingVertical: 10,
+                marginHorizontal: 50,
+                borderRadius: 6,
+                elevation: 2,
+              }}
+              onPress={() => setModal(true)}>
+              <Text style={{color: '#FFFFFF'}}>Buka Pop Up</Text>
+            </TouchableOpacity>
+            <Modal isVisible={modal}>
+              <View
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  paddingVertical: 20,
+                  paddingHorizontal: 20,
+                  borderRadius: 6,
+                }}>
+                <TouchableOpacity
+                  style={{justifyContent: 'center', alignItems: 'flex-end'}}
+                  onPress={() => setModal(false)}>
+                  <Text>✖</Text>
+                </TouchableOpacity>
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <Image
+                    source={require('./src/images/gift.png')}
+                    style={{width: 150, height: 150}}
+                  />
+                  <Text
+                    style={{
+                      fontWeight: 'bold',
+                      marginTop: 20,
+                      fontSize: 15,
+                      color: '#272727',
+                    }}>
+                    Selamat Anda Mendapatkan Hadiah! 😁
+                  </Text>
+                  <Text style={{textAlign: 'center', fontSize: 11}}>
+                    Silahkan claim kelas online gratis anda, dengan menekan tombol
+                    claim.
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  style={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: 10,
+                    backgroundColor: '#FAC67A',
+                    paddingVertical: 10,
+                    borderRadius: 9,
+                    elevation: 2,
+                  }}
+                  onPress={() => setModal(false)}>
+                  <Text style={{color: '#FFFFFF'}}>Claim</Text>
+                </TouchableOpacity>
+              </View>
+            </Modal>
+          </View>
+        );
+      };
 
-
-
+      export default App;
 
 
 
